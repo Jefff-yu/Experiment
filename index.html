@@ -8,11 +8,20 @@
     <a-scene embedded arjs>
       <!-- AR Marker -->
       <a-marker preset="hiro">
-        <!-- Red Sphere -->
-        <a-sphere position='0 0.5 0' radius="0.2" material='color: red;'></a-sphere>
+        <!-- Transparent Box with 100 -->
+        <a-entity position="0 0 0">
+          <!-- Semi-transparent Box -->
+          <a-box position="0 0.5 0" depth="0.2" height="0.2" width="0.2" material="opacity: 0.5; color: #4CAF50;"></a-box>
+          <!-- Text inside the Box -->
+          <a-text value="100" color="#000000" position="0 0.6 0" align="center"></a-text>
+        </a-entity>
       </a-marker>
       <!-- AR Camera -->
-      <a-entity camera></a-entity>
+      <a-entity camera>
+        <!-- Attaching the Box to the Camera -->
+        <a-box position="0 -0.2 -1" width="0.5" height="0.5" depth="0.5" material="opacity: 0.5; color: blue;"></a-box>
+        <a-text value="100" position="0 0 -0.9" align="center" color="black"></a-text>
+      </a-entity>
     </a-scene>
   </body>
 </html>
